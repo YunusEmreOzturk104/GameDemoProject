@@ -17,6 +17,8 @@ namespace GameDemoProject
 
             GamerManager gamerManager = new GamerManager(new NewUserValidationManager());
             gamerManager.Add(gamers);
+            gamerManager.Update(gamers);
+            gamerManager.Delete(gamers);
             
             Game game1 = new Game() { Name = "ps2021", Price = 200 };
             Game game2 = new Game() { Name = "Mobile Legends", Price = 100 };

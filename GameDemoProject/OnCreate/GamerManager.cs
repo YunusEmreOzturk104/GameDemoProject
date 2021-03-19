@@ -12,17 +12,17 @@ namespace GameDemoProject
 
         public void Add(List<Gamer> gamers)
         {
-            
+            Console.WriteLine("Kayıt Eklendi");
         }
 
         public void Delete(List<Gamer> gamers)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Kayıt Silindi");
         }
 
         public void Update(List<Gamer> gamers)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Kayıt Güncellendi");
         }
     }
 }
