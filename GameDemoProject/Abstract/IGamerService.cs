@@ -6,8 +6,8 @@ namespace GameDemoProject
 {
     interface IGamerService
     {
-        void Add(List<Gamer> gamers);
-        void Delete(List<Gamer> gamers);
-        void Update(List<Gamer> gamers);
+        void Add(Gamer gamer);
+        void Delete(Gamer gamer);
+        void Update(Gamer gamer);
     }
 }

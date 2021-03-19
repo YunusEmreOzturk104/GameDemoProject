@@ -7,18 +7,15 @@ namespace GameDemoProject
     {
         static void Main(string[] args)
         {
-            Gamer gamer1 = new Gamer();
-            gamer1.Id = 1; gamer1.FirstName = "Yunus "; gamer1.LastName = "Öztürk";
-            gamer1.TcNo = "14356789345"; gamer1.NickName = "jigsaw"; gamer1.BirthOfDay = "01.08.2002";
-            Gamer gamer2 = new Gamer();
-            gamer2.Id = 2; gamer2.FirstName = "Emre"; gamer2.LastName = "ÖzdemirOğlu"; gamer2.BirthOfDay = "02.07.2003";
-            gamer2.TcNo = "2345678912"; gamer2.NickName = "Sawas@958";
-            List<Gamer> gamers =new List<Gamer>() { gamer1,gamer2};
+            Gamer gamer = new Gamer();
+            gamer.Id = 1; gamer.FirstName = "Yunus"; gamer.LastName = "Öztürk";
+            gamer.TcNo = "14356789345"; gamer.NickName = "jigsaw"; gamer.BirthOfDay = "01.08.2002";
+           
 
-            GamerManager gamerManager = new GamerManager(new NewUserValidationManager());
-            gamerManager.Add(gamers);
-            gamerManager.Update(gamers);
-            gamerManager.Delete(gamers);
+            GamerManager gamerManager = new GamerManager(new UserValidationManager());
+            gamerManager.Add(gamer);
+            gamerManager.Update(gamer);
+            gamerManager.Delete(gamer);
             
             Game game1 = new Game() { Name = "ps2021", Price = 200 };
             Game game2 = new Game() { Name = "Mobile Legends", Price = 100 };
@@ -32,8 +29,7 @@ namespace GameDemoProject
             campaignManager.Update(campaign);
 
             Sales sales = new Sales();
-            sales.Sell(games, gamer2, campaign);
-            sales.Sell(games, gamer1, campaign);
+            sales.Sell(games, gamer, campaign);
         }       
     }
 }

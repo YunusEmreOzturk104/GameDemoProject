@@ -4,11 +4,11 @@ using System.Text;
 
 namespace GameDemoProject
 {
-    class ValidationManager : IValidationService
+    class UserValidationManager : IUserValidationService
     {
         public bool Validate(Gamer gamer)
         {
-            if (gamer.FirstName=="ibrahim"&& gamer.TcNo=="345535543"&&gamer.LastName=="demirelli"&&gamer.BirthOfDay=="17.07.2002")
+            if (gamer.FirstName=="Yunus" && gamer.LastName=="Öztürk"&& gamer.TcNo == "14356789345"&& gamer.BirthOfDay== "01.08.2002")
             {
                 return true;
             }
@@ -17,6 +17,8 @@ namespace GameDemoProject
                 return false;
             }
         }
+
+      
     }
 }
 

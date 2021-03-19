@@ -6,21 +6,30 @@ namespace GameDemoProject
 {
     class GamerManager : IGamerService
     {
-        public GamerManager(NewUserValidationManager newUserValidationManager)
+        UserValidationManager _userValidationManager;
+        public GamerManager(UserValidationManager userValidationManager)
         {
+            _userValidationManager = userValidationManager;
         }
 
-        public void Add(List<Gamer> gamers)
+        public void Add(Gamer gamer)
         {
-            Console.WriteLine("Kayıt Eklendi");
+            if (_userValidationManager.Validate(gamer) == true)
+            {
+                Console.WriteLine("Kayıt Eklendi");
+            }
+            else
+            {
+                Console.WriteLine("kayıt basarısız");
+            }
         }
 
-        public void Delete(List<Gamer> gamers)
+        public void Delete(Gamer gamer)
         {
             Console.WriteLine("Kayıt Silindi");
         }
 
-        public void Update(List<Gamer> gamers)
+        public void Update(Gamer gamer)
         {
             Console.WriteLine("Kayıt Güncellendi");
         }
